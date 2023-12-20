@@ -1,0 +1,7 @@
+torch==1.13.1
+transformers==4.25.1
+accelerate
+huggingface_hub
+triton
+fschat[model_worker,webui]
+openai
