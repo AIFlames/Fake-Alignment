@@ -11,7 +11,7 @@ $ pip install -r requirements.txt
 
 ## Datasets
 We provide a test dataset in `safety.jsonl` of five safety-relevant subcategories that can be used to evaluate the alignment of LLMs. Each question contains a question stem and corresponding positive and negative options:
-<p align="center"> <img src="images/img_examples.png" style="width: 85%;" id="title-icon"></p>
+<p align="center"> <img src="images/img_examples.jpg" style="width: 85%;" id="title-icon"></p>
 
 
 
