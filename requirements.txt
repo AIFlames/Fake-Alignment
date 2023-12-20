@@ -5,3 +5,4 @@ huggingface_hub
 triton
 fschat[model_worker,webui]
 openai
+jsonlines
