@@ -1,7 +1,6 @@
 import openpyxl, tqdm, time, requests, prompts
-from typing import Optional, List, Dict, Mapping, Any
 
-import os, json, argparse, LLM_utils
+import os, json, argparse, LLM_utils, jsonlines
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model", type=str, default='ChatGPT_0301')

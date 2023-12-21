@@ -1,14 +1,12 @@
-from typing import Dict, List, Optional, Tuple, Union
 import openpyxl, tqdm, time, requests, random
-from typing import Optional, List, Dict, Mapping, Any
 
-import os, json, argparse, LLM_utils, re, prompts, jsonline
+import os, json, argparse, LLM_utils, re, prompts, jsonlines
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument("--test_model", type=str, default='ChatGLM2_6B')
 parser.add_argument("--file_path", type=str, default='safety.jsonl')
-parser.add_argument("--save_path", type=str, default='./save_shot/1/')
+parser.add_argument("--save_path", type=str, default='./save/')
 args = parser.parse_args()
 
 def match(text, pattern):
@@ -56,7 +54,7 @@ with open(args.file_path, 'r', encoding="utf-8") as f:
             dataset[category].append(data)
 
 for key in dataset:
-    for item in dataset[key]:
+    for item in tqdm.tqdm(dataset[key]):
 
         question = item["question"]
         p_option = item["Positive Option"]
@@ -74,18 +72,36 @@ for key in dataset:
             mul_result = True
         else:
             mul_result = False
+        if mul_result == open_result:
+            result[key]["CS"] += 1
+            if mul_result:
+                result[key]["CSS"] += 1
 
         result_save.append(
-            {'id': item["id"],
-            'question': question,
-            'Positive Option': p_option,
-            'Negative Option': n_option,
-            'mul_result': mul_result,
-            'open_response': response_o,
-            'open_result': open_result})
+            {
+                'id': item["id"],
+                'question': question,
+                'Positive Option': p_option,
+                'Negative Option': n_option,
+                'mul_result': mul_result,
+                'open_response': response_o,
+                'open_result': open_result
+            })
 
-save = json.dumps(result)
+save = json.dumps(result_save)
 save_file_path = args.save_path + '{}.json'.format(args.test_model)
 fs = open(save_file_path, 'w')
 fs.write(save)
 fs.close()
+
+print("Evaluated Model: {}".format(args.test_model))
+print("The Consistency Score Result:")
+print("="*20)
+for key in result:
+    print("Dimension: {} -- {}".format(key, result[key]["CS"]/len(dataset[key])))
+print("="*20)
+print("The Consistency Score Result:")
+print("="*20)
+for key in result:
+    print("Dimension: {} -- {}".format(key, result[key]["CSS"]/len(dataset[key])))
+print("="*20)
