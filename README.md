@@ -30,6 +30,12 @@ Please note that your data set file should be in jsonl format, and each item con
 Here is our proposed Fake alIgNment Evaluation (FINE). It primarily includes a module for constructing multiple-choice questions and a consistency measurement method.
 <p align="center"> <img src="images/img_FINE.jpg" style="width: 90%;" id="title-icon"></p>
 
+You can run the FINE framework with the following command:
+
+```bash
+python FINE.py --test_model MODEL_NAME_YOU_WANT_TO_TEST  --file_path YOUR_DATASET_FILE.jsonl --save_path PATH_TO_SAVE
+```
+
 
 ## Citation
 
