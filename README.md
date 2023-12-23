@@ -39,6 +39,8 @@ python FINE.py --test_model MODEL_NAME_YOU_WANT_TO_TEST  --file_path YOUR_DATASE
 ## Model Support
 
 We currently support the following models in  `LLM_utils.py`:
+| | | | | | | |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | [GPT-3.5-turbo](https://openai.com/) | [GPT-4](https://openai.com/) | [ChatGLM](https://github.com/THUDM/ChatGLM3) | [MOSS](https://github.com/OpenLMLab/MOSS) | [InternLM](https://github.com/InternLM/InternLM) | [Vicuna](https://github.com/lm-sys/FastChat) | [Qwen](https://github.com/QwenLM/Qwen) |
 
 If you want to use your own model, just replace the following content in `FINE.py`` with your LLM:
