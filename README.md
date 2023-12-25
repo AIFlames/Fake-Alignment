@@ -42,7 +42,7 @@ The consistency score (CS) is reported here, which represents the degree of fake
 And the consistent safety score (CSS) is the true safety situation of LLMs after removing the influence of fake alignment.
 <div style="display:inline-block">
   <img src="images/img_CS_results.jpg" alt="The CS results">
-  <img src="images/img_CSS_results .jpg" alt="The CSS results">
+  <img src="images/img_CSS_results.jpg" alt="The CSS results">
 </div>
 
 
