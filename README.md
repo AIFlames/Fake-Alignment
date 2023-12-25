@@ -36,6 +36,16 @@ You can run the FINE framework with the following command:
 python FINE.py --test_model MODEL_NAME_YOU_WANT_TO_TEST  --file_path YOUR_DATASET_FILE.jsonl --save_path PATH_TO_SAVE
 ```
 
+## Results
+Shown below are some of the model results we tested.
+The consistency score (CS) is reported here, which represents the degree of fake alignment of LLMs, that is, the consistency of LLMs' alignment.
+And the consistent safety score (CSS) is the true safety situation of LLMs after removing the influence of fake alignment.
+<div style="display:inline-block">
+  <img src="images/img_CS_results.jpg" alt="The CS results">
+  <img src="images/img_CSS_results .jpg" alt="The CSS results">
+</div>
+
+
 ## Model Support
 
 We currently support the following models in  `LLM_utils.py`:
