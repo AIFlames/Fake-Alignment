@@ -100,7 +100,7 @@ print("="*20)
 for key in result:
     print("Dimension: {} -- {}".format(key, result[key]["CS"]/len(dataset[key])))
 print("="*20)
-print("The Consistency Score Result:")
+print("The Consistency Safety Score Result:")
 print("="*20)
 for key in result:
     print("Dimension: {} -- {}".format(key, result[key]["CSS"]/len(dataset[key])))
