@@ -1,5 +1,5 @@
 # Fake Alignment: Are LLMs Really Aligned Well?
-The source code for our paper "[Fake Alignment: Are LLMs Really Aligned Well?](https://arxiv.org/abs/2311.05915)". We verify the existence of the fake alignment problem and propose the Fake alIgNment Evaluation (FINE) framework.
+The source code for our NAACL2024 paper "[Fake Alignment: Are LLMs Really Aligned Well?](https://arxiv.org/abs/2311.05915)". We verify the existence of the fake alignment problem and propose the Fake alIgNment Evaluation (FINE) framework.
 
 ## Preparation
 
